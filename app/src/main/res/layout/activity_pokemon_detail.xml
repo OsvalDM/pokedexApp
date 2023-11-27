@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/fondoPokemonDetail">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/baseline_keyboard_backspace_24" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/baseline_favorite_border_24" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="0dp"
+        android:text="Nombre"
+        android:textColor="@color/semiWhite"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        />
+
+    <TextView
+        android:id="@+id/numero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="298dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="0dp"
+        android:text="#0"
+        android:textColor="@color/semiWhite"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="-27dp"
+        android:src="@drawable/pokeball"
+        app:tint="#51858585" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="0dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="8dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/semiWhite"
+            android:paddingHorizontal="40dp"
+            android:paddingTop="80dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/layAtk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Attack"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/atkNumber"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="000"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/atkSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:value="200"
+                    android:valueFrom="0"
+                    android:valueTo="255"
+                    app:thumbRadius="0dp"
+                    app:trackColorActive="@color/black"
+                    app:trackColorInactive="#D7D7D7"
+                    app:trackHeight="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layDef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layAtk"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Defense"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/defNumber"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="000"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/defSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:value="200"
+                    android:valueFrom="0"
+                    android:valueTo="255"
+                    app:haloRadius="10dp"
+                    app:thumbRadius="0dp"
+                    app:trackColorActive="@color/black"
+                    app:trackColorInactive="#D7D7D7"
+                    app:trackHeight="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layspatk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layDef"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Sp. Atack"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/spatkNumber"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="000"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/spatkSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:value="200"
+                    android:valueFrom="0"
+                    android:valueTo="255"
+                    app:haloRadius="10dp"
+                    app:thumbRadius="0dp"
+                    app:trackColorActive="@color/black"
+                    app:trackColorInactive="#D7D7D7"
+                    app:trackHeight="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layspdef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layspatk"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Sp. Defense"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/spdefNumber"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="000"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/spdefSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:value="200"
+                    android:valueFrom="0"
+                    android:valueTo="255"
+                    app:haloRadius="10dp"
+                    app:thumbRadius="0dp"
+                    app:trackColorActive="@color/black"
+                    app:trackColorInactive="#D7D7D7"
+                    app:trackHeight="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/laySpd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layspdef"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Speed"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/spdNumber"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="000"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/spdSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:value="200"
+                    android:valueFrom="0"
+                    android:valueTo="255"
+                    app:haloRadius="10dp"
+                    app:thumbRadius="0dp"
+                    app:trackColorActive="@color/black"
+                    app:trackColorInactive="#D7D7D7"
+                    app:trackHeight="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layHp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/laySpd"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Healt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hpNumber"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="000"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/hpSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:value="200"
+                    android:valueFrom="0"
+                    android:valueTo="255"
+                    app:haloRadius="10dp"
+                    app:thumbRadius="0dp"
+                    app:trackColorActive="@color/black"
+                    app:trackColorInactive="#D7D7D7"
+                    app:trackHeight="10dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="120dp"
+        android:elevation="10dp"
+        >
+        <ImageView
+            android:id="@+id/imgPokemon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="120dp"
+        android:id="@+id/cardFirstType"
+        >
+        <RelativeLayout
+            android:id="@+id/tipo1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            >
+
+            <TextView
+                android:id="@+id/tipoN1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textAllCaps="true"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="120dp"
+        android:layout_toEndOf="@+id/cardFirstType"
+        card_view:cardCornerRadius="20dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/tipo2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            >
+
+            <TextView
+                android:id="@+id/tipoN2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>
